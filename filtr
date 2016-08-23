@@ -1,0 +1,28 @@
+public class Main {
+    public static void filtr() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("enter string");
+        String str1 = scanner.next();
+        String str2 = scanner.next();
+        try {
+            Integer k1 = new Integer(str1.replaceAll("[^0-9]", ""));
+            Integer k2 = new Integer(str2.replaceAll("[^0-9]", ""));
+            if (k1 > k2) {
+                System.out.println("biggest number is " + k1 + " it is in string 1-"+str2);
+            } else if (k1 < k2) {
+                System.out.println("biggest number is " + k2 + " it is in string2-"+str1);
+            } else {
+                System.out.println("number str1 = number str2");
+            }
+            if (k1 > 127 || k2 > 127 || k1<-128 || k2<-128) {
+                System.out.println("this value is very big");
+            }
+        }catch (NumberFormatException e) {
+            System.err.println("incorrect format of string!");
+        }
+    }
+    public static void main(String[] args) {
+        filtr();
+
+    }
+}
